@@ -1,0 +1,158 @@
+<Container>
+    next: next
+    img: img
+    rig: right
+    wro: wrong
+    do: do
+    re: re
+    mi: mi
+    fa: fa
+    sol: sol
+    la: la
+    si: si
+    otvet: otvet
+    Carousel: 
+        direction: 'right'
+        BoxLayout:
+            orientation: 'vertical'
+            rows: 4
+            padding: 20
+            spacing: 20
+    
+
+        
+            BoxLayout:
+        #        padding: 10
+                cols: 4
+                size_hint: 1, 0.2
+        
+                Label:
+         #           halign: 'right'
+                    halign: 'center'
+                    valign: 'center'
+                    text_size: 300, 20
+                    pos_hint: {'x': 1}
+                    text: 'Правильно:'
+        
+                Label:
+                    id: right
+                    halign: 'left'
+                    valign: 'center'
+                    text_size: 70, 20
+                    text: '0'
+        
+                Label:
+        #            halign: 'right'
+                    halign: 'center'
+                    valign: 'center'
+                    text_size: 300, 20
+                    color: 1, 0, 0, 1
+                    text: 'Неправильно:'
+        
+                Label:
+                    id: wrong
+                    halign: 'left'
+                    valign: 'center'
+                    text_size: 70, 20
+                    pos_hint: {'x': 0}
+                    text: '0'
+        
+            Image:
+                id: img
+                padding: 10
+                source: 'img/1.jpeg'
+                size: self.texture_size
+        
+            Label:
+                id: otvet
+                size_hint: 1, 0.2
+                text: 'Готовы?'
+                font_size: '40sp'
+        
+            GridLayout:
+                cols: 4
+                size_hint: 1, 0.7
+        
+                Button:
+                    id: do
+                    disabled: True
+                    text: 'do'
+        
+                    on_release:
+                        root.check('do')
+        
+                Button:
+                    id: re
+                    disabled: True
+                    text: 're'
+                    on_release:
+                        root.check('re')
+        
+                Button:
+                    id: mi
+                    disabled: True
+                    text: 'mi'
+                    on_release:
+                        root.check('mi')
+        
+                Button:
+                    id: fa
+                    disabled: True
+                    text: 'fa'
+                    on_release:
+                        root.check('fa')
+        
+                Button:
+                    id: sol
+                    disabled: True
+                    text: 'sol'
+                    on_release:
+                        root.check('sol')
+        
+                Button:
+                    id: la
+                    disabled: True
+                    text: 'la'
+                    on_release:
+                        root.check('la')
+        
+                Button:
+                    id: si
+                    disabled: True
+                    text: 'si'
+                    on_release:
+                        root.check('si')
+        
+                Button:
+                    id: next
+                    color: 1, 0, 0, 1
+                    background_color: 1, 1, 0, 1
+                    font_size: '40sp'
+                    text: 'next'
+        
+                    on_release:
+                        root.start()
+    
+        BoxLayout:
+            rows: 4
+            orientation: 'vertical'
+            Label:
+                font_size: '40sp'
+                size_hint: 1, 0.3
+                text: 'Настройки'
+            BoxLayout:
+                size_hint: 1, 0.2
+                Label:
+                    text: 'Скрипичный ключ'
+                Switch:
+                    active: True
+            BoxLayout:
+                size_hint: 1, 0.2
+                Label:
+                    text: 'Басовый ключ'
+                Switch:
+                    active: False
+            BoxLayout:
+                size_hint: 1, 0.3
+                Image:
+                    source: "img/1.jpeg"
